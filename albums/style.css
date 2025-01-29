@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: #c7c7c7;
 }
 
 body {
@@ -43,6 +44,23 @@ a:hover {
     transform: scale(1.1);
 }
 
+.ajouter_photo {
+    all: unset;
+    box-shadow: none;
+    display: flex;
+    justify-content: center;
+    width: 300px;
+    height: 300px;
+    background-image: url("images/icone_ajouter.png");
+    background-size: 350px 350px;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 50px 50px;
+    margin: 20px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
 img {
     margin: 25px;
     width: 300px;
@@ -65,6 +83,10 @@ img:hover {
    background-repeat: no-repeat;
    background-position: center;
    padding: 25px 40px;
+}
+
+p {
+    color: #c7c7c7;
 }
 
 /* Formulaire pour ajouter un nouvel album */
@@ -132,4 +154,27 @@ form .error {
 
 .message {
     color: red;
+}
+
+/* Modifier */
+
+.photo {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+}
+
+.modifier {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.modifier:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
