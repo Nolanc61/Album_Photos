@@ -23,6 +23,7 @@ h1 {
 
 .titres {
     text-align: center;
+    margin: -10px;
 }
 
 a {
@@ -82,7 +83,7 @@ img {
 img:hover {
     box-shadow: 10px 10px 25px 5px rgb(60, 60, 60);
     transform: scale(1.1);
-    filter: brightness(1.15);
+    filter: brightness(1.05);
 }
 
 .logo {
@@ -199,3 +200,47 @@ form .error {
 .suppression:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
+
+/* La fenêtre modale */
+.modal {
+    display: none; /* Masqué par défaut */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow: auto; /* Permet de faire défiler le contenu si nécessaire */
+    padding-top: 60px;
+    text-align: center;
+}
+
+/* Contenu de l'image */
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+    width: auto;
+    height: auto;
+}
+
+/* Bouton de fermeture */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover, .close:focus {
+    color: #f00;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+

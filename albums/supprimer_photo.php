@@ -64,7 +64,7 @@ mysqli_close($cnx);
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-    <title>Confirmation de suppression</title>
+    <title>Confirmation de suppression</title> 
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
