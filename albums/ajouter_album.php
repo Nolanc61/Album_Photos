@@ -32,7 +32,7 @@ $res = mysqli_query($cnx, $sql);
 <!doctype html> 
 <html lang="fr">
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8"> 
     <title>Album photo</title>
     <link rel="stylesheet" href="style.css">
 </head>

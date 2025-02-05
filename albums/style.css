@@ -49,16 +49,24 @@ a:hover {
     box-shadow: none;
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 300px;
-    height: 300px;
-    background-image: url("images/icone_ajouter.png");
-    background-size: 350px 350px;
-    background-repeat: no-repeat;
-    background-position: center;
-    padding: 50px 50px;
-    margin: 20px;
+    height: 100px;
+    background-color: #333;
+    color: #c7c7c7;
+    font-size: 1.5rem;
+    font-weight: bold;
     border-radius: 15px;
+    margin-top: 20px;
+    margin-left: 35px;
     cursor: pointer;
+    transition: box-shadow 0.5s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.ajouter_photo:hover {
+    color: #00ccff;
+    box-shadow: 15px 15px 30px 5px #00ccff;
+    transform: scale(1.1);
 }
 
 img {
@@ -169,12 +177,25 @@ form .error {
     top: 10px;
     right: 10px;
     background-color: rgba(0, 0, 0, 0.6);
-    color: white;
     padding: 5px 10px;
     text-decoration: none;
     border-radius: 5px;
 }
 
 .modifier:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.suppression {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.suppression:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }

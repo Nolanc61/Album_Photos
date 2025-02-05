@@ -59,7 +59,7 @@ if (isset($_GET['idAlb'])) {
         }
         ?>
         <a href="ajouter_album.php">+</a>
-        <a class="logo" href="modifier_album.php"></a>
+        <a class="logo" href="modifier_album.php?idAlb=<?= $_GET["idAlb"] ?>"></a>
     </div>
     <br><br>
 
@@ -73,18 +73,21 @@ if (isset($_GET['idAlb'])) {
             echo '<img src="photos/' . $ligne["nomPh"] . '" alt="' . $ligne["nomPh"] . '" />';
 
             // Ajouter un lien vers la page de modification de la photo avec idPh
-            echo '<a class="modifier" href="modifier_photo.php?idPh=' . $ligne["idPh"] . '">Modifier</a>';
+            echo '<a class="modifier" href="modifier_photo.php?idPh=' . $ligne["idPh"] . '">✏️</a>';
+
+            // Ajouter un lien vers la page de suppression de la photo avec idPh
+            echo '<a class="suppression" href="supprimer_photo.php?idPh=' . $ligne["idPh"] . '">🗑️</a>';
             echo '</div>';
         }
     } else {
         echo "<div class='message'>Aucune photo dans cet album.</div>";
     }
 
+    echo '<a class="ajouter_photo" href="ajouter_photo.php?idAlb=' . $idAlb . '">Ajouter une photo</a>';
     // Libération des résultats de la requête
     mysqli_free_result($resImages);
     mysqli_free_result($resAllAlbums);
     mysqli_close($cnx);
     ?>
-
 </body>
 </html>

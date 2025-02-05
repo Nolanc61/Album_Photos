@@ -1,4 +1,3 @@
-
 <?php
 // Connexion à la base de données
 $cnx = mysqli_connect("localhost", "root", "", "albums");
