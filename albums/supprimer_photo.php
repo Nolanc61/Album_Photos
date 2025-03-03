@@ -1,4 +1,12 @@
 <?php
+session_start();
+include("fonctions.php");
+
+if(!admin()){
+    header("Location: index.php");
+    exit();
+}
+
 // Connexion à la base de données
 $cnx = mysqli_connect("localhost", "root", "", "albums");
 

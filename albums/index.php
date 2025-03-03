@@ -1,4 +1,7 @@
 <?php
+    session_start();
+    include("fonctions.php");
+
     $cnx = mysqli_connect("localhost", "root", "", "albums");
 
     if (!isset($_GET['idAlb'])) {
@@ -57,10 +60,17 @@
             // Afficher le nom de l'album et créer un lien pour chaque album
             echo '<a href="index.php?idAlb=' . $album["idAlb"] . '">' . $album['nomAlb'] . '</a> ';
         }
+        if(admin()){
         ?>
         <a href="ajouter_album.php">+</a>
         <a class="logo" href="modifier_album.php?idAlb=<?= $_GET["idAlb"] ?>"></a>
         <a href="supprimer_album.php?idAlb=<?=$_GET["idAlb"]?>">🆑</a>
+        <a href="deconnexion.php">🔚</a>
+        <?php
+        }else{
+            echo '<a href="connexion.php">🌐</a>';
+        }
+        ?>
     </div>
     <br><br>
 
@@ -73,11 +83,13 @@
             echo '<div class="photo">';
             echo '<img src="photos/' . $ligne["nomPh"] . '" alt="' . $ligne["nomPh"] . '" onclick="ouvrirImage(\'photos/' . $ligne["nomPh"] . '\')" />';
 
+            if(admin()){
             // Ajouter un lien vers la page de modification de la photo avec idPh
             echo '<a class="modifier" href="modifier_photo.php?idPh=' . $ligne["idPh"] . '">✏️</a>';
 
             // Ajouter un lien vers la page de suppression de la photo avec idPh
             echo '<a class="suppression" href="supprimer_photo.php?idPh=' . $ligne["idPh"] . '">🗑️</a>';
+            }
             echo '</div>';
         }
     } else {

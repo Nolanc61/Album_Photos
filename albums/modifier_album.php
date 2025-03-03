@@ -1,4 +1,12 @@
 <?php
+session_start();
+include("fonctions.php");
+
+if(!admin()){
+    header("Location: index.php");
+    exit();
+}
+
 // Connexion à la base de données
 $cnx = mysqli_connect("localhost", "root", "", "albums");
 
@@ -74,6 +82,7 @@ $resAllAlbums = mysqli_query($cnx, $sqlAllAlbums);
         ?>
         <a href="ajouter_album.php">+</a>
         <a class="logo" href="modifier_album.php"></a>
+        <a href="supprimer_album.php?idAlb">🆑</a>
     </div>
     <br><br><br>
 
